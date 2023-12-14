@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container w-80 mt-5">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#salary-calc" type="button"
+                    role="tab">Salary Calculator</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#average" type="button"
+                    role="tab">Average of 5</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#currency-convert"
+                    type="button" role="tab">Currency Converter</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#rectangle" type="button"
+                    role="tab">Rectangle Perimeter/Area</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#digits-sum" type="button"
+                    role="tab">Sum of digits</button>
+            </li>
+        </ul>
+        <div class="tab-content text-center w-50 mx-auto" id="myTabContent">
+            <!-- Salary calculator -->
+            <div class="tab-pane fade show active" id="salary-calc" role="tabpanel" aria-labelledby="home-tab">
+                <div class="form-group mt-5">
+                    <label for="working-day">Enter number of working day(s):</label>
+                    <input type="text" class="form-control mt-4 mx-auto" name="" id="working-day">
+                    <button class="btn btn-danger mt-5" onclick="salaryCalculator()">Calculate</button>
+                    <h3 id="salary-result" class="mt-4 result"></h3>
+                </div>
+            </div>
+            <!-- Average of 5 -->
+            <div class="tab-pane fade" id="average" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="form-group mt-5">
+                    <label>Enter 5 numbers:</label>
+                    <div class="avg-input d-flex justify-content-center">
+                        <input type="text" class="form-control mt-4 mx-auto" name="" id="avg-num1">
+                        <input type="text" class="form-control mt-4 mx-auto" name="" id="avg-num2">
+                        <input type="text" class="form-control mt-4 mx-auto" name="" id="avg-num3">
+                        <input type="text" class="form-control mt-4 mx-auto" name="" id="avg-num4">
+                        <input type="text" class="form-control mt-4 mx-auto" name="" id="avg-num5">
+                    </div>
+                    <button class="btn btn-danger mt-5" onclick="average()">Calculate</button>
+                    <h3 id="avg-result" class="mt-4 result"></h3>
+                </div>
+            </div>
+            <!-- Currency converter -->
+            <div class="tab-pane fade" id="currency-convert" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="form-group mt-5">
+                    <label for="currency-usd">Enter the amount in USD:</label>
+                    <input type="text" class="form-control mt-4 mx-auto" name="" id="currency-usd">
+                    <button class="btn btn-danger mt-5" onclick="currencyConverter()">Calculate</button>
+                    <h3 id="currency-result" class="mt-4 result"></h3>
+                </div>
+            </div>
+            <!-- Rectangle perimeter / area -->
+            <div class="tab-pane fade" id="rectangle" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="form-group mt-5">
+                    <h4>Enter length & width of the rectangle:</h4>
+                    <div class="rectangle-input d-flex justify-content-around mt-5">
+                        <div>
+                            <label for="length">Length</label>
+                            <input type="text" class="form-control mt-4 mx-auto" name="" id="length">
+                        </div>
+                        <div>
+                            <label for="width">Width</label>
+                            <input type="text" class="form-control mt-4 mx-auto" name="" id="width">
+                        </div>
+                    </div>
+                    <button class="btn btn-danger mt-5" onclick="rectangleCalc()">Calculate</button>
+                    <h3 id="rectangle-result" class="mt-4 result"></h3>
+                </div>
+            </div>
+            <!-- Sum of digits -->
+            <div class="tab-pane fade" id="digits-sum" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="form-group mt-5">
+                    <label for="number">Enter a numer with 2 digits:</label>
+                    <input type="text" class="form-control mt-4 mx-auto" name="" id="number">
+                    <button class="btn btn-danger mt-5" onclick="digitsSum()">Calculate</button>
+                    <h3 id="digits-sum-result" class="mt-4 result"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
